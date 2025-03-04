@@ -28,6 +28,12 @@ export default function Home() {
     fetchTodos().then(setTodos);
   }, []);
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
+    const title = formData.get('title') as string;
+  };
+
   return (
     <div>
       <h1>Home</h1>
@@ -42,6 +48,11 @@ export default function Home() {
           <p>No todos found</p>
         )
       }
+
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="title" />
+        <button type="submit">Add Todo</button>
+      </form>
     </div>
   );
 }

@@ -10,7 +10,8 @@
     "dev": "npm-run-all -p -l dev:*",
     "dev:frontend": "cd frontend && pnpm run dev",
     "dev:backend": "cd backend && pnpm run dev",
-    "db:push": "cd backend && pnpx prisma db push"
+    "db:push": "cd backend && pnpx prisma db push",
+    "db:studio": "cd backend && pnpx prisma studio"
   },
   "keywords": [],
   "author": "",
